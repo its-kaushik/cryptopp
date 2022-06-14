@@ -7,7 +7,7 @@ const TopCryptocurrencies = () => {
     const [topCoinsList, setTopCoinsList] = useState([]) ;
 
     useEffect( () => {
-        axios.get('http://localhost:4000/api/coins/10')
+        axios.get('http://localhost:4000/api/coins/50')
             .then( response =>{
                 setTopCoinsList(response.data) ;
             } ) 
@@ -24,7 +24,7 @@ const TopCryptocurrencies = () => {
     }else {
         return(
             <div>
-                <h2 className="text-center mt-5" >Top 10 Cryptocurrencies</h2>
+                <h2 className="text-center mt-5" >Top 50 Cryptocurrencies</h2>
                 <div className="d-flex flex-wrap" >
                     {
                         topCoinsList.map( (coin, i) => {
